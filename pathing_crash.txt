@@ -1,0 +1,212 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 11/28/19 9:44 PM
+Description: Ticking entity
+
+java.lang.NullPointerException: Ticking entity
+	at com.minecolonies.coremod.entity.pathfinding.Pathfinding.enqueue(Pathfinding.java:62) ~[?:0.10.564-ALPHA] {re:classloading}
+	at com.minecolonies.coremod.entity.pathfinding.MinecoloniesAdvancedPathNavigate.setPathJob(MinecoloniesAdvancedPathNavigate.java:99) ~[?:0.10.564-ALPHA] {re:classloading}
+	at com.minecolonies.coremod.entity.pathfinding.MinecoloniesAdvancedPathNavigate.moveAwayFromXYZ(MinecoloniesAdvancedPathNavigate.java:82) ~[?:0.10.564-ALPHA] {re:classloading}
+	at com.minecolonies.coremod.entity.citizen.EntityCitizen.updateMoveAwayPath(EntityCitizen.java:1289) ~[?:0.10.564-ALPHA] {re:classloading}
+	at com.minecolonies.coremod.entity.citizen.EntityCitizen.func_70636_d(EntityCitizen.java:1087) ~[?:0.10.564-ALPHA] {re:classloading}
+	at net.minecraft.entity.LivingEntity.func_70071_h_(LivingEntity.java:2032) ~[?:?] {re:classloading,pl:accesstransformer:B,xf:fml:apotheosis:apothpotiondmg}
+	at net.minecraft.entity.MobEntity.func_70071_h_(MobEntity.java:274) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.world.ClientWorld.func_217418_a(ClientWorld.java:165) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.world.ClientWorld$$Lambda$6367/685689407.accept(Unknown Source) ~[?:?] {}
+	at net.minecraft.world.World.func_217390_a(World.java:684) ~[?:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.world.ClientWorld.func_217419_d(ClientWorld.java:133) ~[?:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.func_71407_l(Minecraft.java:1344) ~[?:?] {re:classloading,pl:accesstransformer:B,xf:fml:randompatches:RandomPatches Minecraft Transformer,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.func_195542_b(Minecraft.java:869) [?:?] {re:classloading,pl:accesstransformer:B,xf:fml:randompatches:RandomPatches Minecraft Transformer,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:384) [?:?] {re:classloading,pl:accesstransformer:B,xf:fml:randompatches:RandomPatches Minecraft Transformer,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(SourceFile:155) [?:?] {re:classloading}
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_51] {}
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_51] {}
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_51] {}
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_51] {}
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider.lambda$launchService$0(FMLClientLaunchProvider.java:56) [forge-1.14.4-28.1.90.jar:28.1] {}
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider$$Lambda$406/417118375.call(Unknown Source) [forge-1.14.4-28.1.90.jar:28.1] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-4.1.0.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54) [modlauncher-4.1.0.jar:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72) [modlauncher-4.1.0.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81) [modlauncher-4.1.0.jar:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65) [modlauncher-4.1.0.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at com.minecolonies.coremod.entity.pathfinding.Pathfinding.enqueue(Pathfinding.java:62)
+	at com.minecolonies.coremod.entity.pathfinding.MinecoloniesAdvancedPathNavigate.setPathJob(MinecoloniesAdvancedPathNavigate.java:99)
+	at com.minecolonies.coremod.entity.pathfinding.MinecoloniesAdvancedPathNavigate.moveAwayFromXYZ(MinecoloniesAdvancedPathNavigate.java:82)
+	at com.minecolonies.coremod.entity.citizen.EntityCitizen.updateMoveAwayPath(EntityCitizen.java:1289)
+	at com.minecolonies.coremod.entity.citizen.EntityCitizen.func_70636_d(EntityCitizen.java:1087)
+	at net.minecraft.entity.LivingEntity.func_70071_h_(LivingEntity.java:2032)
+	at net.minecraft.entity.MobEntity.func_70071_h_(MobEntity.java:274)
+	at net.minecraft.client.world.ClientWorld.func_217418_a(ClientWorld.java:165)
+	at net.minecraft.client.world.ClientWorld$$Lambda$6367/685689407.accept(Unknown Source)
+
+-- Entity being ticked --
+Details:
+	Entity Type: minecolonies:citizen (com.minecolonies.coremod.entity.citizen.EntityCitizen)
+	Entity ID: 196
+	Entity Name: Payne N. DeBottom
+	Entity's Exact location: -101.50, 66.33, -388.54
+	Entity's Block location: World: (-102,66,-389), Chunk: (at 10,4,11 in -7,-25; contains blocks -112,0,-400 to -97,255,-385), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Entity's Momentum: 0.00, -0.08, 0.12
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.func_217390_a(World.java:684)
+	at net.minecraft.client.world.ClientWorld.func_217419_d(ClientWorld.java:133)
+
+-- Affected level --
+Details:
+	All players: 1 total; [ClientPlayerEntity['LordILArrion'/3353, l='MpServer', x=-148.52, y=63.00, z=-353.86]]
+	Chunk stats: Client Chunk Cache: 729, 463
+	Level dimension: DimensionType{minecraft:overworld}
+	Level name: MpServer
+	Level seed: 0
+	Level generator: ID 07 - biomesoplenty, ver 0. Features enabled: false
+	Level generator options: {}
+	Level spawn location: World: (-48,64,-143), Chunk: (at 0,4,1 in -3,-9; contains blocks -48,0,-144 to -33,255,-129), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Level time: 14238590 game time, 17795411 day time
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Server brand: forge
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.world.ClientWorld.func_72914_a(ClientWorld.java:410)
+	at net.minecraft.client.Minecraft.func_71396_d(Minecraft.java:1750)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:400)
+	at net.minecraft.client.main.Main.main(SourceFile:155)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider.lambda$launchService$0(FMLClientLaunchProvider.java:56)
+	at net.minecraftforge.fml.loading.FMLClientLaunchProvider$$Lambda$406/417118375.call(Unknown Source)
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37)
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:54)
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:72)
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:81)
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:65)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.14.4
+	Minecraft Version ID: 1.14.4
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 742406304 bytes (708 MB) / 1758228480 bytes (1676 MB) up to 6429081600 bytes (6131 MB)
+	CPUs: 4
+	JVM Flags: 7 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xss1M -Xmx6G -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn128M
+	ModLauncher: 4.1.0+62+5bfa59b
+	ModLauncher launch target: fmlclient
+	ModLauncher naming: srg
+	ModLauncher services: 
+		/eventbus-1.0.0-service.jar eventbus PLUGINSERVICE 
+		/forge-1.14.4-28.1.90.jar object_holder_definalize PLUGINSERVICE 
+		/forge-1.14.4-28.1.90.jar runtime_enum_extender PLUGINSERVICE 
+		/accesstransformers-1.0.1-milestone.0.1+94458e7-shadowed.jar accesstransformer PLUGINSERVICE 
+		/forge-1.14.4-28.1.90.jar capability_inject_definalize PLUGINSERVICE 
+		/forge-1.14.4-28.1.90.jar runtimedistcleaner PLUGINSERVICE 
+		/forge-1.14.4-28.1.90.jar fml TRANSFORMATIONSERVICE 
+	FML: 28.1
+	Forge: net.minecraftforge:28.1.90
+	FML Language Providers: 
+		javafml@28.1
+		minecraft@1
+	Mod List: 
+		enchantedbookredesign-1.1.jar Enchanted Book Redesign {enchantedbookredesign@1.1 DONE}
+		CraftPresence-1.14.4-1.5.6.jar CraftPresence {craftpresence@1.5.6 DONE}
+		inventorysorter-1.14.4-16.2.0.jar Simple Inventory Sorter {inventorysorter@16.2.0 DONE}
+		TrashSlot_1.14.4-10.4.7.jar TrashSlot {trashslot@10.4.7 DONE}
+		EquipmentTooltips-1.14.4-1.3.2+10.jar Equipment Tooltips {equipmenttooltips@1.3.2+10 DONE}
+		damage_indicator-0.0.7.jar Ama's Damage Indicator {damage_indicator@0.0.7 DONE}
+		jei-1.14.4-6.0.0.25.jar Just Enough Items {jei@6.0.0.25 DONE}
+		Druidcraft-1.14-0.2.32.jar Druidcraft {druidcraft@0.2.32 DONE}
+		AttributeFix-1.14.4-3.0.2.jar AttributeFix {attributefix@3.0.2 DONE}
+		embellishcraft-bop-1.14.4-1.0.0.jar EmbellishCraft BoP Addon {embellishcraft-bop@1.14.4-1.0.0 DONE}
+		Upgrade Aquatic Wave Three v6 - Beta 1.0.8.jar Upgrade Aquatic {upgrade_aquatic@1.0.7 DONE}
+		SilentMechanisms-1.14.4-0.6.8+41.jar Silent's Mechanisms {silents_mechanisms@0.6.8+41 DONE}
+		reap-1.10.2.jar Reap Mod {reap@1.10.2 DONE}
+		essentials-1.14.4-2.6.1.jar Essentials {essentials@1.14.4-2.6.1 DONE}
+		create-mc1.14.4_v0.1.1a.jar Create {create@0.1.1a DONE}
+		Clumps-4.0.0.jar Clumps {clumps@4.0.0 DONE}
+		BetterTitleScreen-1.14.4-1.7.jar Better Title Screen {bettertitlescreen@1.14.4-1.7 DONE}
+		XaerosWorldMap_1.5.0.1_Forge_1.14.4.jar Xaero's World Map {xaeroworldmap@1.5.0.1 DONE}
+		CookingForBlockheads_1.14.4-7.4.0.jar Cooking for Blockheads {cookingforblockheads@7.4.0 DONE}
+		Controlling-5.0.4.jar Controlling {controlling@5.0.4 DONE}
+		Placebo-1.14.4-2.3.5.jar Placebo {placebo@2.3.5 DONE}
+		globaldatapack-1.14.4-1.2.1.jar Dark Roleplay - Global Datapacks {globaldatapack@1.14.4-1.2 DONE}
+		mightyarchitect-mc1.14.4_v0.5.jar The Mighty Architect {mightyarchitect@0.5 DONE}
+		betteranimalsplus-1.14.4-7.1.2.jar Better Animals Plus {betteranimalsplus@7.1.2 DONE}
+		The-Endergetic-Expansion-1.14.4-v1.0.jar The Endergetic Expansion {endergetic@1.0 DONE}
+		u_team_core-1.14.4-2.7.8.138.jar U Team Core {uteamcore@2.7.8.138 DONE}
+		randompatches-1.14.4-1.19.1.1.jar RandomPatches {randompatches@1.14.4-1.19.1.1 DONE}
+		Apotheosis-1.14.4-2.4.4.jar Apotheosis {apotheosis@2.4.4 DONE}
+		Morpheus-1.14.4-4.2.43.jar Morpheus {morpheus@version DONE}
+		Hwyla-forge-1.10.6-B67_1.14.4.jar Waila {waila@version DONE}
+		ToastControl-1.14.4-2.2.0.jar Toast Control {toastcontrol@2.2.0 DONE}
+		CarryOn MC1.14.4 v1.12.4.jar Carry On {carryon@1.12.4 DONE}
+		forge-1.14.4-28.1.90-universal.jar Forge {forge@28.1.90 DONE}
+		refinedstorage-1.7.jar Refined Storage {refinedstorage@1.7 DONE}
+		ironchest-1.14.4-9.1.5.jar Iron Chests {ironchest@1.14.3-9.0.3 DONE}
+		corpse-1.14.4-1.0.3.jar Corpse {corpse@1.14.4-1.0.3 DONE}
+		CraftingTweaks_1.14.4-10.1.4.jar Crafting Tweaks {craftingtweaks@10.1.4 DONE}
+		forge-1.14.4-28.1.90-client.jar Minecraft {minecraft@1.14.4 DONE}
+		useful_backpacks-1.14.4-1.7.4.46.jar Useful Backpacks {usefulbackpacks@1.7.4.46 DONE}
+		EnchantmentDescriptions-1.14.4-1.3.8.jar EnchantmentDescriptions {enchdesc@1.3.8 DONE}
+		swingthroughgrass-1.14.4-1.3.2.jar SwingThroughGrass {swingthroughgrass@1.14.4-1.3.2 DONE}
+		embellishcraft-1.14.4-1.3.1.jar EmbellishCraft {embellishcraft@1.14.4-1.3.1 DONE}
+		AmbientSounds_v3.0.14_mc1.14.4.jar Ambient Sounds {ambientsounds@3.0.3 DONE}
+		MouseTweaks-2.12-mc1.14.4.jar Mouse Tweaks {mousetweaks@2.12 DONE}
+		ToolBelt-1.14.4-1.12.5.jar Tool Belt {toolbelt@1.12.5 DONE}
+		SilentLib-1.14.4-4.4.0+44.jar Silent Lib {silentlib@4.4.0+44 DONE}
+		BiomesOPlenty-1.14.4-9.0.0.255-universal.jar Biomes O' Plenty {biomesoplenty@1.14.4-9.0.0.254 DONE}
+		SilentGear-1.14.4-1.4.4+70.jar Silent Gear {silentgear@1.4.4+70 DONE}
+		forbidden_arcanus-1.14.4-1.5-beta-1.jar Forbidden & Arcanus {forbidden_arcanus@1.14.4-1.5-beta-1 DONE}
+		extcaves-1.3.3.jar Extended Caves {extcaves@1.3.3 DONE}
+		simplefarming-1.14.4-1.2.2.jar Simple Farming {simplefarming@1.14.4-1.2.2 DONE}
+		LLOverlayReloaded-1.2.4-mc1.14.4.jar Light Level Overlay Reloaded {llor@1.2.4-mc1.14.4 DONE}
+		SpartanShields-1.14.4-2.0.0-beta-1.jar Spartan Shields {spartanshields@1.14.4-2.0.0-beta-1 DONE}
+		Xaeros_Minimap_1.18.8_Forge_1.14.4.jar Xaero's Minimap {xaerominimap@1.18.8 DONE}
+		AutoRegLib-1.4-35.jar AutoRegLib {arl@1.4-35 DONE}
+		Quark-r2.0-199.jar Quark {quark@r2.0-199 DONE}
+		FastWorkbench-1.14.4-2.1.4.jar FastWorkbench {fastbench@2.1.4 DONE}
+		extlights-1.6.jar Extended Lights {extlights@1.6 DONE}
+		StorageDrawers-1.14.4-6.0.5.jar Storage Drawers {storagedrawers@1.14.4-6.0.3 DONE}
+		betteranimals-1.14.4-5.2.1.jar Cyber's Better Animal Models {betteranimals@5.2.1 DONE}
+		HardcoreRevival_1.14.4-3.0.10.jar Hardcore Revival {hardcorerevival@3.0.10 DONE}
+		elevatorid-1.14.4-1.5.2.jar Elevator Mod {elevatorid@1.14.4-1.5.2 DONE}
+		tubesreloaded-1.14.4-1.1.0d.jar Tubes Reloaded {tubesreloaded@1.14.4-1.1.0d DONE}
+		structurize-0.10.199-ALPHA.jar Structurize {structurize@0.10.199-ALPHA DONE}
+		minecolonies-0.10.564-ALPHA-universal.jar Minecolonies {minecolonies@0.10.564-ALPHA DONE}
+		FastFurnace-1.14.4-2.2.4.jar FastFurnace {fastfurnace@2.2.4 DONE}
+		ChunkNoGoByeBye-1.14.4-1.0.3.jar ChunkNoGoByeBye {chunknogobyebye@1.14.4-1.0.3 DONE}
+		AppleSkin-mc1.14.4-forge-1.0.12.jar AppleSkin {appleskin@1.0.12 DONE}
+		AI-Improvements-1.14.4-0.3.0.jar AI-Improvements {aiimprovements@0.2.2 DONE}
+		Aquaculture-1.14.4-2.0.2.jar Aquaculture 2 {aquaculture@1.14.4-2.0.2 DONE}
+		switchbow-1.5.8.jar Switch-Bow {switchbow@1.5.8 DONE}
+		FastLeafDecay-v17.jar FastLeafDecay {fastleafdecay@v17 DONE}
+	Launched Version: 1.14.4-forge-28.1.90
+	LWJGL: 3.2.2 build 10
+	OpenGL: GeForce 940MX/PCIe/SSE2 GL version 4.6.0 NVIDIA 425.45, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: English (US)
+	CPU: 4x Intel(R) Core(TM) i7-7500U CPU @ 2.70GHz
